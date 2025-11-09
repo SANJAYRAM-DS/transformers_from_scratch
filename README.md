@@ -38,23 +38,11 @@ Input Text → Tokenizer → Encoder (Transformer) → Decoder (Transformer) →
 ```
 
 translator-transformer/
-│
-├── data/
-│   ├── train.csv
-│   ├── val.csv
-│   └── test.csv
-│
-├── models/
-│   └── transformer_translation_model/
-│
-├── notebooks/
-│   └── translation_training.ipynb
-│
 ├── src/
 │   ├── dataset_preparation.py
 │   ├── model_training.py
+│   ├── configs.py
 │   └── inference.py
-│
 ├── requirements.txt
 ├── README.md
 └── app.py
