@@ -1,10 +1,6 @@
-# src/configs.py
 from pathlib import Path
 
 def get_config():
-    """
-    Central config. Edit this to change model / dataset choices.
-    """
     base = Path('.')
     return {
         "model_name": "Helsinki-NLP/opus-mt-en-es",
@@ -21,8 +17,7 @@ def get_config():
         "seed": 42,
         # dataset
         "dataset_name": "opus_books",
-        "dataset_config_name": "en-es",  # will be tried; if not available the script will fall back to loading provided CSVs
-        # local files fallback (use if you have train/val CSVs)
+        "dataset_config_name": "en-es",  
         "local_train_csv": "data/train.csv",
         "local_val_csv": "data/val.csv",
     }

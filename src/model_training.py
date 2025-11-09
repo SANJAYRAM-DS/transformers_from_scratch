@@ -1,8 +1,3 @@
-"""
-Train / fine-tune a seq2seq model for translation using Hugging Face Trainer API.
-Saves the final model to models/transformer_translation_model/
-"""
-
 import os
 import numpy as np
 from datasets import load_dataset
@@ -66,7 +61,7 @@ if __name__ == "__main__":
     tokenized_datasets = dataset.map(
         preprocess_function,
         batched=True,
-        remove_columns=dataset["train"].column_names,  # ✅ removes string columns
+        remove_columns=dataset["train"].column_names,
     )
 
     data_collator = DataCollatorForSeq2Seq(tokenizer, model=model, padding="longest")
@@ -93,7 +88,7 @@ if __name__ == "__main__":
             report_to="none",
         )
     except TypeError:
-        print("⚠️ Using fallback: `eval_strategy` instead of `evaluation_strategy`")
+        print("Using fallback: `eval_strategy` instead of `evaluation_strategy`")
         training_args = Seq2SeqTrainingArguments(
             output_dir=cfg["output_dir"],
             eval_strategy="epoch",
@@ -124,10 +119,10 @@ if __name__ == "__main__":
         compute_metrics=None,
     )
 
-    print("🚀 Starting training. This may be slow on CPU — GPU recommended.")
+    print("Starting training. This may be slow on CPU — GPU recommended.")
     trainer.train()
 
     os.makedirs(cfg["output_dir"], exist_ok=True)
     trainer.save_model(cfg["output_dir"])
     tokenizer.save_pretrained(cfg["output_dir"])
-    print("✅ Model and tokenizer saved to:", cfg["output_dir"])
+    print("Model and tokenizer saved to:", cfg["output_dir"])

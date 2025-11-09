@@ -1,9 +1,3 @@
-# src/inference.py
-"""
-Load the trained model and run translations.
-Usage:
-    python src/inference.py --text "Hello world"
-"""
 import torch
 import argparse
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline

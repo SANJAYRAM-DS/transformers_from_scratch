@@ -1,9 +1,3 @@
-# app.py
-"""
-Minimal FastAPI app for translation inference (loads the trained model on startup).
-Run:
-    uvicorn app:app --reload
-"""
 from fastapi import FastAPI
 from pydantic import BaseModel
 from src.inference import build_translator

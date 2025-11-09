@@ -1,12 +1,3 @@
-# src/dataset_preparation.py
-"""
-Prepare dataset for seq2seq training.
-Priority:
- 1) Try to load HuggingFace dataset 'opus_books' with config (en-ta)
- 2) If not available or user provided CSVs, load CSVs from data/
-CSV format expected: columns 'en' and 'ta' (source and target) OR 'source' and 'target' if you prefer.
-Outputs tokenized datasets ready for Seq2SeqTrainer.
-"""
 from datasets import load_dataset, Dataset, DatasetDict
 import os
 import pandas as pd
