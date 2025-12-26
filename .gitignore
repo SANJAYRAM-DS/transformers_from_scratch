@@ -1,2 +1,33 @@
+# Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
 venv/
+env/
+ENV/
+
+# VSCode settings
 .vscode/
+
+# Hugging Face cache (optional)
+# .cache/huggingface/
+
+# Model files and scripts you don't want on GitHub
+models/
+huggingface.py
+modelupload.py
+test.py
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Others
+*.egg-info/
+dist/
+build/
